@@ -1,0 +1,94 @@
+Wuddup here's the laravel and php tips because you know you forgot all this shit
+
+LARAVEL:
+
+Pretty much everything is in the app folder, including your models and controllers
+
+Config changes your ... configuration settings
+Public for storying your assets
+Resources folder for creating and modifying our views
+Test for doing our unit tests
+Vendor for our dependencies
+Routes go in the routes folder most obviously
+Database for holding application seeds and migrations
+[Models are in the root of the app folder]
+
+(So the file structure is pretty nice even though you don't use all of it)
+
+Controllers go in the Http folder within app (under Controllers)
+
+Laravel is designed to use artisan commands to scaffold most pieces of your app by themselves
+
+NOTABLE ONES INCLUDE:
+php artisan serve (boot the dev server)
+php artisan down (take down the server)
+php artisan up (relaunch the server)
+php artisan cache:clear (clear the cache)
+php arisan make:controller "name of controller" (make a new controller)
+php arisan make:model "name of model" (make a new model)
+php arisan make:model "name of model" -m (make a new model /w migrations. This I remember is pretty critical)
+
+PHP to JS Primer:
+$name = David is same as var name = David;
+
+echo $name IS NOT THE SAME AS console.log(name)
+The reason is that echo is used to print everything, on to a command line or onto a front end
+THE OTHER REASON IS THAT PHP DOESN'T DO LINE BREAKS THEMSELVES
+If your using echo like a command line like JS you have to add a line break like...
+console.log("This is a console log") is the same as echo "This is a console log\n"
+
+"This is a template literal ending with variable ${name}" is the same as "$name"
+Don't forget you can also set variables this way
+$twonames = "$name $name";
+
+if (name.length > 10) {console.log("It's greater than 10.")} is the same as if (strlen($name) > 10) {echo "It's greater than 10\n"}
+
+let myarray = ["First","Second"] is the same as $myarray = ["First","Second"]
+myarray[0] is the same as $myarray[0]
+
+myarray.forEach(function(item){console.log("This is the index called ${item}"}) AND EVEN BETTER for (var item of myarray){console.log("This is the index called ${item}
+")} is the same as foreach ($myarray as $item) {echo "This is the index called $item}
+
+PHP has associated lists (not in JS) which are kind of like Strictly Typed Language enums but you can set the index to a value:
+$associatedarrayexample = ["Thing" => "Index of Thing", "NewThing" => "Index of Second Thing"];
+You canlso set these associated arrays to things that aren't strings remember like $myarray = ["Thing" => [3, 4], "New Thing" => ["String", $anobject]]
+
+require './pathsworkthesame' is the name as var whatever = import("a modules name") or import (name) as ("a modules name");
+
+public/private function doathing () {return $name} is the same as function doathing() {return name} in JS except there are access modifiers like in C#
+
+$mynewobject = new myClass() is the same as newobject = new myClass() like you would think
+
+class myClass {
+    public/private $property1 = "some stuff";
+
+    public function printLine () {
+        $this->println("This is a printed line");
+    }
+    public function doathing () {
+
+        $this->printeLine();
+        return $this->$property1
+    }
+
+}
+
+is the same as (note the this)
+
+class myClass {
+    let property1 = "some stuff";
+
+    function printLine () {
+        (I dunno if the js equivalent is console log but here)
+        console.log("This is a print line");
+    }
+
+    function doathing () {
+        this.printLine;
+        return this.property1;
+    }
+}
+
+SUPERGLOBAL STUFF is in PHP and it's pretty weird
+
+
